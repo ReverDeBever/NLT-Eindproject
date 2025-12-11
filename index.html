@@ -1,102 +1,384 @@
-
 <!DOCTYPE html>
-<html lang='nl'>
+<html lang="nl">
 <head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <title>Test</title>
+    <meta charset="UTF-8">
+    <title>NLT-Eindproject: Bio-informatica</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        /* Simpele, nette stijl */
         body {
             font-family: Arial, sans-serif;
+            line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
+            background: #f5f7fb;
+            color: #222;
         }
+
         header {
-            background-color: #4CAF50;
+            background: #16a34a;
             color: white;
-            text-align: center;
             padding: 20px;
+            text-align: center;
         }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        header p {
+            margin: 4px 0 0 0;
+        }
+
+        .tagline {
+            font-style: italic;
+            margin-top: 6px;
+            font-size: 0.95rem;
+        }
+
         nav {
-            background-color: #333;
-            overflow: hidden;
-        }
-        nav a {
-            float: left;
-            display: block;
+            background: #15803d;
             color: white;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
             text-align: center;
-            padding: 14px 16px;
+        }
+
+        nav li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        nav a {
+            color: white;
             text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
         }
+
         nav a:hover {
-            background-color: #ddd;
-            color: black;
+            text-decoration: underline;
         }
-        section {
-            padding: 20px;
-        }
-        h2 {
-            color: #4CAF50;
-        }
-        .content {
-            background: white;
-            padding: 20px;
+
+        main {
+            max-width: 1000px;
             margin: 20px auto;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            max-width: 900px;
+            padding: 0 15px 40px 15px;
         }
+
+        section {
+            background: white;
+            margin-bottom: 20px;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.06);
+        }
+
+        section h2 {
+            color: #15803d;
+            margin-top: 0;
+        }
+
+        h3 {
+            color: #16a34a;
+            margin-bottom: 5px;
+        }
+
+        .highlight {
+            background: #dcfce7;
+            padding: 8px 10px;
+            border-left: 4px solid #16a34a;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+
+        .grid-2 {
+            display: grid;
+            gap: 15px;
+        }
+
+        @media (min-width: 800px) {
+            .grid-2 {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        ol {
+            padding-left: 22px;
+        }
+
+        .schema {
+            text-align: center;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .small-text {
+            font-size: 0.9rem;
+        }
+
         footer {
             text-align: center;
-            padding: 10px;
-            background-color: #333;
-            color: white;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+            font-size: 0.85rem;
+            color: #555;
+            padding: 15px 0 25px 0;
+        }
+
+        code {
+            background: #f3f4f6;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Test</h1>
-        <p>Test</p>
-    </header>
-    <nav>
-        <a href="#intro">Test</a>
-        <a href="#uitleg">Test</a>
-        <a href="#voordelen">Test</a>
-        <a href="#nadelen">Test</a>
-        <a href="#opdracht">Test</a>
-    </nav>
-    <section id="intro" class="content">
-        <h2>Test</h2>
-        <p>Test</p>
-    </section>
-    <section id="uitleg" class="content">
-        <h2>Test</h2>
-        <p>Test</p>
-    </section>
-    <section id="voordelen" class="content">
-        <h2>Test</h2>
+
+<header>
+    <h1>Bio-informatica</h1>
+    <p class="tagline">NLT-Eindproject</p>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#wat-is-bioinfo">Wat is bio-informatica?</a></li>
+        <li><a href="#dna-basis">DNA & eiwitsynthese</a></li>
+        <li><a href="#bioinfo-werkt">Hoe werkt bio-informatica?</a></li>
+        <li><a href="#recombinant">Recombinant-DNA & bio-informatica</a></li>
+        <li><a href="#toepassingen">Toepassingen</a></li>
+        <li><a href="#voordelen-nadelen">Voordelen & nadelen</a></li>
+    </ul>
+</nav>
+
+<main>
+
+    <!-- Wat is bio-informatica -->
+    <section id="wat-is-bioinfo">
+        <h2>Wat is bio-informatica?</h2>
+        <p>
+            <strong>Bio-informatica</strong> is een vakgebied waarin we <strong>biologie</strong> en
+            <strong>informatica</strong> combineren.
+            Mensen die dit doen gebruiken computers om enorme hoeveelheden biologische gegevens, zoals
+            DNA-sequenties, te bewaren, te vergelijken en te analyseren.
+        </p>
+
+        <div class="highlight">
+            <strong>Korte definitie:</strong><br>
+            Bio-informatica = <strong>met computers biologische data (zoals DNA) begrijpen</strong>.
+        </div>
+
+        <h3>Waarom hebben we bio-informatica nodig?</h3>
         <ul>
-            <li>Test</li>
+            <li>In een mens zitten meer dan 3 miljard verschillende soorten “letters” (DNA).</li>
+            <li>Met het blote oog of een rekenmachine kun je dat nooit allemaal zien en / of analyseren.</li>
+            <li>Computers kunnen snel patronen, fouten en overeenkomsten vinden.</li>
         </ul>
     </section>
-    <section id="nadelen" class="content">
-        <h2>Test<h2>
+
+    <!-- DNA basis -->
+    <section id="dna-basis">
+        <h2>DNA, genen en eiwitsynthese</h2>
+        <p>
+            Om te snappen wat bio-informatica doet, moet je eerst weten wat <strong>DNA</strong> en
+            <strong>eiwitten</strong> zijn en hoe ze samenhangen.
+        </p>
+
+        <div class="grid-2">
+            <div>
+                <h3>DNA en genen</h3>
+                <p>
+                    DNA is het molecuul waarin al je erfelijke informatie staat. Het bestaat uit vier letters:
+                    <strong>A, T, C</strong> en <strong>G</strong>. Een <strong>gen</strong> is een stukje DNA dat de
+                    code bevat voor één eiwit.
+                </p>
+
+                <h3>Stap 1 – Transcriptie (DNA → mRNA)</h3>
+                <p>
+                    Van een gen wordt eerst een kopie gemaakt in de vorm van <strong>mRNA</strong>. Dit heet
+                    <strong>transcriptie</strong>. Het mRNA verlaat de celkern en gaat naar de ribosomen.
+                </p>
+            </div>
+            <div>
+                <h3>Stap 2 – Translatie (mRNA → eiwit)</h3>
+                <p>
+                    In de <strong>ribosomen</strong> wordt de code van mRNA “gelezen” en omgezet in een keten van
+                    aminozuren. Zo ontstaat een <strong>eiwit</strong>. Eiwitten voeren bijna alle taken in de cel uit.
+                </p>
+
+                <h3>Eiwit → eigenschap</h3>
+                <p>
+                    Eiwitten bepalen eigenschappen, bijvoorbeeld:
+                </p>
+                <ul>
+                    <li>Enzymen die voedsel afbreken.</li>
+                    <li>Pigmenten die oog- of haarkleur bepalen.</li>
+                    <li>Eiwitten die een plant beschermen tegen ziektes.</li>
+                </ul>
+            </div>
+        </div>
+
+        <p class="schema">
+            <strong>GEN → EIWIT → EIGENSCHAP</strong>
+        </p>
+
+        <p class="small-text">
+            In de bio-informatica wordt de <strong>DNA-code</strong> van genen digitaal opgeslagen, zodat we deze met
+            computers kunnen analyseren.
+        </p>
+    </section>
+
+    <!-- Hoe werkt bio-informatica -->
+    <section id="bioinfo-werkt">
+        <h2>Hoe werkt bio-informatica in de praktijk?</h2>
+        <p>
+            Bio-informatica begint met <strong>biologische data</strong>, bijvoorbeeld DNA-sequenties, RNA-data of
+            eiwitstructuren. DE data wordt in de computer gezet als lange reeksen letters of getallen.
+        </p>
+
+        <h3>Stap 1 – DNA uitlezen (sequencen)</h3>
+        <ol>
+            <li>In het laboratorium wordt DNA uit cellen gehaald.</li>
+            <li>Speciale apparaten lezen de volgorde van de DNA-letters (A, T, C, G). Dit heet
+                <strong>sequencen</strong>.</li>
+            <li>De computer krijgt een tekst zoals: <code>ATGCGTACCGGTA...</code></li>
+        </ol>
+
+        <h3>Stap 2 – Data opslaan</h3>
+        <p>
+            Deze DNA-sequenties worden opgeslagen in grote databanken. Mensen in de bio-informatica bouwen en onderhouden deze
+            databases zodat onderzoekers overal ter wereld de gegevens kunnen gebruiken en vergelijken.
+        </p>
+
+        <h3>Stap 3 – Data analyseren</h3>
+        <p>
+            Met speciale software kan een computer bijvoorbeeld:
+        </p>
         <ul>
-            <li>Test</li>
+            <li>DNA-sequenties van verschillende mensen of soorten vergelijken.</li>
+            <li>Mutaties (foutjes) in DNA opsporen.</li>
+            <li>Voorspellen welk eiwit bij een gen hoort.</li>
+            <li>Onderzoeken hoe soorten met elkaar verwant zijn (stambomen).</li>
         </ul>
+
+        <div class="highlight">
+            Voorbeeld: een arts stuurt DNA-data van een tumor naar een computerprogramma. De software zoekt naar
+            mutaties die bij een bepaalde vorm van kanker horen en geeft advies over mogelijke behandelingen.
+        </div>
     </section>
-    <section id="opdracht" class="content">
-        <h2Test</h2>
-        <p>Test</p>
+
+    <!-- Recombinant-DNA & bio-informatica -->
+    <section id="recombinant">
+        <h2>Recombinant-DNA-techniek en bio-informatica</h2>
+        <p>
+            <strong>Recombinant-DNA-techniek</strong> is een vorm van biotechnologie waarmee wetenschappers heel gericht
+            een gen uit het ene organisme kunnen knippen en in het DNA van een ander organisme kunnen plakken.
+        </p>
+
+        <h3>Korte uitleg recombinant-DNA-techniek</h3>
+        <ol>
+            <li><strong>Zoek het gen</strong> dat je wilt gebruiken, bijvoorbeeld een gen voor ziektebestendigheid.</li>
+            <li><strong>Knip het gen uit</strong> met speciale enzymen (restrictie-enzymen).</li>
+            <li><strong>Plak het gen in een plasmide</strong>, een klein DNA-ringetje van een bacterie.</li>
+            <li><strong>Breng het plasmide in een bacterie</strong>, die het gen kan doorgeven of inbouwen.</li>
+            <li>Het nieuwe organisme krijgt zo een <strong>nieuwe eigenschap</strong>.</li>
+        </ol>
+
+        <h3>De rol van bio-informatica hierbij</h3>
+        <ul>
+            <li>Bio-informatica helpt om <strong>het juiste gen te vinden</strong> in grote DNA-databanken.</li>
+            <li>Computers kunnen voorspellen welk effect een bepaalde mutatie op een eiwit heeft.</li>
+            <li>Met software worden <strong>DNA-ontwerpen</strong> gecontroleerd voordat ze in het lab worden gemaakt.</li>
+        </ul>
+
+        <div class="highlight">
+            Zonder bio-informatica zou recombinant-DNA-techniek veel langzamer, duurder en minder precies zijn.
+        </div>
     </section>
-    <footer>
-        <p>&copy; 2025 Rev en Xavier</p>
-    </footer>
+
+    <!-- Toepassingen -->
+    <section id="toepassingen">
+        <h2>Toepassingen van bio-informatica</h2>
+        <p>
+            Bio-informatica wordt in heel veel gebieden van de biologie en geneeskunde gebruikt.
+        </p>
+
+        <div class="grid-2">
+            <div>
+                <h3>Geneeskunde</h3>
+                <ul>
+                    <li>Opsporen van erfelijke ziektes door DNA van patiënten te analyseren.</li>
+                    <li>Vergelijken van tumoren om te kiezen welke behandeling het beste werkt.</li>
+                    <li>Onderzoek naar virussen (zoals het vergelijken van virusvarianten).</li>
+                </ul>
+
+                <h3>Onderzoek naar evolutie</h3>
+                <ul>
+                    <li>DNA van verschillende soorten vergelijken om stambomen te maken.</li>
+                    <li>Onderzoeken welke genen in veel soorten hetzelfde zijn (en dus belangrijk).</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Voedsel & landbouw</h3>
+                <ul>
+                    <li>Planten selecteren met gunstige genen, bijvoorbeeld voor hogere opbrengst.</li>
+                    <li>Zoeken naar genen die een plant beter bestand maken tegen droogte of ziektes.</li>
+                </ul>
+
+                <h3>Biotechnologie & industrie</h3>
+                <ul>
+                    <li>Ontwerpen van bacteriën of gisten die nuttige stoffen maken (enzymen, medicijnen).</li>
+                    <li>Analyseren welke genen aanstaan of uitstaan in een fabriekcel.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Voordelen en nadelen -->
+    <section id="voordelen-nadelen">
+        <h2>Voordelen en nadelen van bio-informatica</h2>
+
+        <div class="grid-2">
+            <div>
+                <h3>Voordelen</h3>
+                <ul>
+                    <li>Maakt het mogelijk om <strong>heel veel hoeveelheden DNA-data</strong> te analyseren.</li>
+                    <li>Versnelt onderzoek naar ziektes en medicijnen.</li>
+                    <li>Helpt artsen om behandelingen beter af te stemmen op de patiënt.</li>
+                    <li>Maakt biotechnologie nauwkeuriger (bijv. bij recombinant-DNA-ontwerpen).</li>
+                    <li>Kan helpen om voedselproductie en landbouw duurzamer te maken.</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Nadelen en risico’s</h3>
+                <ul>
+                    <li>Er worden grote hoeveelheden gevoelige gegevens (bijv. DNA van patiënten) opgeslagen. 
+                        <strong>Privacy</strong> is een belangrijk probleem.</li>
+                    <li>Resultaten kunnen verkeerd geïnterpreteerd worden als mensen de statistiek niet goed begrijpen.</li>
+                    <li>Er zijn ethische vragen: wie mag jouw DNA-gegevens zien en gebruiken?</li>
+                    <li>Niet alle landen en mensen hebben dezelfde toegang tot deze technologie.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doelgroep -->
+    
+
+</main>
+
+<footer>
+    NLT-Eindproject Rev Nijborg en Xavier Holtkamp - H5D - 2025
+</footer>
+
 </body>
 </html>
